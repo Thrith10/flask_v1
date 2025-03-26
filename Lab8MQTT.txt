@@ -1,0 +1,18 @@
+2201427_RenessRavichandran_Lab8MQTT_README
+
+IoT Webcam Image Capture and MQTT Transmission
+
+Explanation of each .py file
+
+1. 'mqtt_publisher.py'
+- Purpose: Sends a capture trigger and receives the image.
+- Functionality:
+  - Publishes a message to 'capture/image' topic to instruct the subscriber to take a photo.
+  - Subscribes to 'image/stream' topic to receive and display the image via OpenCV.
+  
+2. 'mqtt_subscriber.py'
+- Purpose: Acts as a webcam image capturer and image publisher.
+- Functionality:
+  - Listens for a trigger message on the 'capture/image' topic.
+  - Upon receiving the trigger, captures an image using a webcam.
+  - Encodes the image in Base64 and publishes it to the 'image/stream' topic.
